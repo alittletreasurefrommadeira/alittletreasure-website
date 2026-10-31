@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e5">
+  <meta name="description" content="Handmade resin jewellery inspired by the flowers and landscapes of Madeira. Each piece is a little treasure, carefully crafted to preserve nature's delicate moments.">
+  <title>A Little Treasure from Madeira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f0e5;
+      --paper-deep: #eee9d9;
+      --sage: #e8e8d9;
+      --green: #263b29;
+      --green-soft: #53634c;
+      --ink: #30342b;
+      --gold: #c6a66b;
+      --line: rgba(38,59,41,.32);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --script: 'Allura', cursive;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      padding: 16px;
+      color: var(--ink);
+      background: #e9e5d9;
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.42;
+    }
+    a { color: inherit; }
+    .site-shell {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 30px;
+      background: var(--paper);
+      box-shadow: 0 14px 50px rgba(45,48,34,.12);
+      isolation: isolate;
+    }
+    .container { width: min(1180px, 88%); margin: 0 auto; }
+    .site-header {
+      position: relative;
+      z-index: 10;
+      background: rgba(247,243,233,.97);
+      border-bottom: 1px solid rgba(38,59,41,.09);
+    }
+    .nav-row { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--green); text-decoration: none; flex-shrink: 0; }
+    .brand-mark { width: 82px; height: 52px; }
+    .brand-name { font-size: clamp(21px,2vw,29px); line-height: .88; font-weight: 600; letter-spacing: -.5px; }
+    .brand-name span { display: block; padding-left: 12px; }
+    .nav-links { display: flex; align-items: center; justify-content: center; gap: clamp(16px,3vw,42px); }
+    .nav-links a, .handmade { font: 500 10px/1.3 var(--sans); text-transform: uppercase; letter-spacing: 1.3px; text-decoration: none; color: var(--green); white-space: nowrap; }
+    .nav-links a { padding: 10px 0; border-bottom: 1px solid transparent; }
+    .nav-links a:hover, .nav-links a:focus-visible { border-color: var(--green); }
+    .handmade { display: flex; align-items: center; gap: 10px; text-transform: none; letter-spacing: .2px; font: italic 15px/1.05 var(--serif); }
+    .handmade span { font-size: 30px; color: var(--green); }
+    .menu-button { display: none; border: 1px solid var(--line); color: var(--green); background: transparent; border-radius: 50%; width: 42px; height: 42px; font-size: 22px; }
+
+    .hero { min-height: 540px; display: grid; grid-template-columns: 1.02fr .98fr; background: #e8e5d8; }
+    .hero-photo { min-height: 540px; position: relative; overflow: hidden; }
+    .hero-photo img { width: 100%; height: 100%; min-height: 540px; display: block; object-fit: cover; object-position: 48% 42%; }
+    .hero-copy {
+      position: relative; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+      padding: 58px clamp(34px,6vw,90px); overflow: hidden;
+      background: linear-gradient(115deg, rgba(247,243,233,.96), rgba(247,243,233,.88)), url('assets/hero-jewellery.jpg') right bottom/auto 88% no-repeat;
+    }
+    .eyebrow { margin: 0 0 17px; color: var(--green-soft); font: 500 10px/1.4 var(--sans); letter-spacing: 2.8px; text-transform: uppercase; }
+    h1, h2, h3 { color: var(--green); font-weight: 500; }
+    .hero h1 { max-width: 570px; margin: 0; font-size: clamp(48px,6.1vw,82px); line-height: .88; letter-spacing: -1.8px; }
+    .sprig { color: var(--green); font-size: 31px; line-height: 1; margin: 20px 0 12px; }
+    .hero h2 { max-width: 360px; margin: 0 0 14px; font-size: clamp(24px,2.4vw,32px); line-height: 1.05; }
+    .hero-copy > p:not(.eyebrow) { max-width: 350px; margin: 0; font-size: 18px; }
+    .short-rule { width: 55px; height: 1px; background: var(--green-soft); margin: 22px 0 0; }
+    .text-link { display: inline-block; margin-top: 22px; padding-bottom: 5px; border-bottom: 1px solid var(--green-soft); font: 500 10px var(--sans); letter-spacing: 1.4px; text-transform: uppercase; text-decoration: none; }
+
+    .artist-section { padding: 72px 0 68px; background: var(--paper); }
+    .artist-grid { display: grid; grid-template-columns: 1fr .92fr .78fr; gap: clamp(26px,4vw,58px); align-items: center; }
+    .artist-copy h2, .collection-copy h2 { margin: 0 0 9px; font-size: clamp(38px,4vw,53px); line-height: .96; letter-spacing: -.8px; }
+    .artist-copy h3 { margin: 0 0 14px; font-size: 23px; line-height: 1.1; }
+    .artist-copy p:not(.eyebrow) { margin: 0 0 12px; font-size: 18px; }
+    .signature { margin-top: 17px; color: var(--green); font: 36px/1 var(--script); transform: rotate(-5deg); }
+    .portrait-frame { position: relative; padding: 10px; background: #eee4d1; border: 1px solid rgba(164,137,91,.25); border-radius: 4px; box-shadow: 0 5px 18px rgba(76,61,37,.13); transform: rotate(-1deg); }
+    .portrait-frame img { display: block; width: 100%; aspect-ratio: .84; object-fit: cover; object-position: center 42%; }
+    .artist-quote { color: var(--green); font-size: 22px; font-style: italic; line-height: 1.25; }
+    .artist-quote p { margin: 0 0 17px; }
+    .artist-quote .quote-mark { font-size: 38px; line-height: .6; font-style: normal; }
+    .quote-sprig { display: block; margin: 16px auto; text-align: center; font-size: 27px; font-style: normal; }
+
+    .process-section { padding: 45px 0 48px; background: #f0ecdf; border-top: 1px solid rgba(38,59,41,.05); border-bottom: 1px solid rgba(38,59,41,.05); }
+    .process-heading { text-align: center; }
+    .process-heading h2 { margin: 0; font-size: clamp(32px,3.5vw,43px); line-height: 1; }
+    .process-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 34px; margin-top: 30px; }
+    .process-card { text-align: center; padding: 0 18px; }
+    .process-number { color: var(--gold); font: 38px/1 var(--script); }
+    .process-card h3 { margin: 6px 0 5px; font-size: 25px; }
+    .process-card p { max-width: 280px; margin: 0 auto; font-size: 17px; }
+
+    .collection-section { padding: 58px 0 62px; background: var(--sage); }
+    .collection-layout { display: grid; grid-template-columns: .8fr 2.2fr; gap: 38px; align-items: center; }
+    .collection-copy p:not(.eyebrow) { max-width: 310px; margin: 13px 0 18px; font-size: 18px; }
+    .outline-button { display: inline-flex; align-items: center; gap: 15px; padding: 12px 19px; border: 1px solid var(--green-soft); color: var(--green); background: transparent; font: 500 10px var(--sans); letter-spacing: 1.3px; text-transform: uppercase; text-decoration: none; transition: background .2s,color .2s; }
+    .outline-button:hover { background: var(--green); color: var(--paper); }
+    .product-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .product-card { min-width: 0; }
+    .product-card img { display: block; width: 100%; aspect-ratio: .76; object-fit: cover; border-radius: 2px; box-shadow: 0 3px 12px rgba(47,52,37,.09); }
+    .product-card h3 { margin: 9px 0 1px; font-size: 21px; line-height: 1.05; }
+    .product-card p { margin: 0; font-size: 15px; }
+    .product-card a { text-decoration: none; }
+    .product-card a:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
+
+    .contact-section { position: relative; display: grid; grid-template-columns: .9fr 1.2fr .8fr; align-items: center; min-height: 300px; background: var(--paper); overflow: hidden; }
+    .coast-photo { height: 100%; min-height: 300px; }
+    .coast-photo img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; object-position: 48% center; mask-image: linear-gradient(to right, black 78%, transparent 100%); }
+    .contact-copy { padding: 38px 20px; text-align: center; }
+    .contact-copy .sprig { margin: 0 0 8px; }
+    .contact-copy h2 { margin: 0 0 8px; font-size: 37px; line-height: 1; }
+    .contact-copy p { margin: 0 auto 12px; max-width: 420px; font-size: 17px; }
+    .email-link { display: inline-block; margin: 9px 0 8px; color: var(--green); font-size: 17px; text-decoration: none; overflow-wrap: anywhere; }
+    .email-link:hover { text-decoration: underline; }
+    .social-handle { margin-top: 8px; color: var(--green); font: 12px var(--sans); letter-spacing: .4px; }
+    .contact-note { padding: 20px; color: var(--green-soft); font: italic 25px/1.05 var(--script); text-align: center; transform: rotate(-7deg); }
+    .contact-note span { display: block; font: 22px var(--serif); margin-top: 10px; }
+    .site-footer { padding: 17px 20px; background: var(--green); color: #f4efdf; text-align: center; font: 10px var(--sans); letter-spacing: 2px; text-transform: uppercase; }
+
+    .product-card .product-price { margin-top: 5px; color: var(--green); font: 500 13px var(--sans); }
+    .product-card .product-status { margin-top: 4px; color: var(--green-soft); font: 10px var(--sans); letter-spacing: .8px; text-transform: uppercase; }
+    .products-loading, .products-error { grid-column: 1 / -1; color: var(--green); font-size: 17px; }
+    @media (max-width: 900px) {
+      .container { width: 90%; }
+      .handmade { display: none; }
+      .artist-grid { grid-template-columns: 1fr 1fr; }
+      .artist-quote { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; font-size: 20px; }
+      .quote-sprig { display: none; }
+      .collection-layout { grid-template-columns: 1fr; gap: 25px; }
+      .collection-copy p:not(.eyebrow) { max-width: 540px; }
+      .contact-section { grid-template-columns: .75fr 1.25fr; }
+      .contact-note { display: none; }
+    }
+    @media (max-width: 640px) {
+      body { padding: 0; background: var(--paper); }
+      .site-shell { border-radius: 0; box-shadow: none; }
+      .container { width: 88%; }
+      .nav-row { min-height: 72px; flex-wrap: wrap; gap: 8px; }
+      .brand-mark { width: 61px; height: 42px; }
+      .brand-name { font-size: 21px; }
+      .menu-button { display: inline-grid; place-items: center; }
+      .nav-links { display: none; width: 100%; padding: 4px 0 17px; flex-direction: column; align-items: flex-start; gap: 3px; }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { width: 100%; padding: 9px 0; font-size: 11px; }
+      .hero { display: flex; flex-direction: column; }
+      .hero-photo, .hero-photo img { min-height: 360px; height: 360px; }
+      .hero-photo img { object-position: 45% 38%; }
+      .hero-copy { min-height: 370px; padding: 44px 9% 48px; background-size: auto 70%; }
+      .hero h1 { font-size: clamp(48px,13vw,66px); }
+      .hero h2 { font-size: 26px; }
+      .hero-copy > p:not(.eyebrow) { font-size: 17px; max-width: 330px; }
+      .artist-section { padding: 52px 0 48px; }
+      .artist-grid { grid-template-columns: 1fr; gap: 25px; }
+      .artist-copy h2 { font-size: 43px; }
+      .portrait-frame { width: min(82%,360px); margin: 0 auto; }
+      .artist-quote { grid-column: auto; display: block; font-size: 21px; padding: 0 4px; }
+      .artist-quote p { margin-bottom: 14px; }
+      .process-section { padding: 42px 0; }
+      .process-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 24px; }
+      .process-card { padding: 0 8px; }
+      .collection-section { padding: 48px 0 50px; }
+      .collection-layout { gap: 25px; }
+      .collection-copy h2 { font-size: 42px; }
+      .product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px 13px; }
+      .product-card img { aspect-ratio: .82; }
+      .product-card h3 { font-size: 20px; }
+      .contact-section { display: flex; flex-direction: column; }
+      .coast-photo { width: 100%; height: 210px; min-height: 210px; }
+      .coast-photo img { min-height: 210px; mask-image: linear-gradient(to bottom, black 78%, transparent 100%); }
+      .contact-copy { padding: 25px 7% 42px; }
+      .contact-copy h2 { font-size: 35px; }
+      .email-link { font-size: 15px; }
+      .site-footer { font-size: 9px; letter-spacing: 1.5px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  </style>
+</head>
+<body>
+<div class="site-shell">
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="#home" aria-label="A Little Treasure from Madeira — Home">
+        <svg class="brand-mark" viewBox="0 0 100 60" fill="none" aria-hidden="true">
+          <path d="M3 39 27 19 39 27 52 8 94 39H3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="m20 31 8-7 5 4m11 1 8-12 8 8m9 2 7 5M34 39l8-7 7 7m11-7 8 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M18 47c7-4 13 4 20 0s13 4 20 0 13 4 20 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">A Little Treasure<span>from Madeira</span></span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#artist">The Artist</a><a href="#process">The Process</a><a href="#collection">Collection</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="handmade"><span>❧</span><span>Handmade<br>with Nature</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-photo"><img src="assets/hero-sara.jpg" alt="Sara among the flowers of Madeira"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Handmade with Nature</p>
+        <h1>A Little Treasure<br>from Madeira</h1>
+        <span class="sprig" aria-hidden="true">❧</span>
+        <h2>Natural beauty, captured in time.</h2>
+        <p>Handmade resin jewellery, inspired by the flowers and landscapes of Madeira. Each piece is a little treasure, carefully crafted to preserve nature’s most delicate moments.</p>
+        <span class="short-rule" aria-hidden="true"></span>
+        <a class="text-link" href="#collection">Discover the collection&nbsp; →</a>
+      </div>
+    </section>
+
+    <section class="artist-section" id="artist">
+      <div class="container artist-grid">
+        <div class="artist-copy">
+          <p class="eyebrow">The Artist</p>
+          <h2>Hello, I’m Sara.</h2>
+          <h3>A resin artist from the beautiful island of Madeira, Portugal.</h3>
+          <p>Art and decoration have always been part of my life — a family passion passed down through generations.</p>
+          <p>Inspired by my love of Nature, Madeira and its charming villages, I create tiny pieces of jewellery that capture a little moment in time.</p>
+          <div class="signature">With love,<br>Sara&nbsp; ❧</div>
+        </div>
+        <div class="portrait-frame"><img src="assets/artist-sara.jpg" alt="Portrait of Sara, the artist"></div>
+        <div class="artist-quote">
+          <div><p><span class="quote-mark">“</span><br>I personally gather flowers and plants from around the island, carefully dry them, and preserve their natural beauty forever in crystal-clear resin.”</p></div>
+          <div><span class="quote-sprig" aria-hidden="true">❧</span><p>“Every piece is completely unique — only one exists.” ✨</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section" id="process">
+      <div class="container">
+        <div class="process-heading"><p class="eyebrow">The Process</p><h2>A little piece of nature, made with care.</h2></div>
+        <div class="process-grid">
+          <article class="process-card"><div class="process-number">01</div><h3>Gathering</h3><p>Finding delicate flowers and little botanical treasures around Madeira.</p></article>
+          <article class="process-card"><div class="process-number">02</div><h3>Preserving</h3><p>Carefully drying each flower to keep its natural beauty.</p></article>
+          <article class="process-card"><div class="process-number">03</div><h3>Creating</h3><p>Arranging each detail in resin to make a truly unique piece.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="collection-section" id="collection">
+      <div class="container collection-layout">
+        <div class="collection-copy">
+          <p class="eyebrow">The Collection</p>
+          <h2>Nature<br>in your hands.</h2>
+          <p>From delicate wildflowers to vibrant island blooms, each piece is a celebration of Madeira’s natural beauty.</p>
+          <a class="outline-button" href="mailto:alittletreasurefrommadeira@gmail.com?subject=Collection%20enquiry">Explore the collection <span>→</span></a>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite">
+          <p class="products-loading">Discovering little treasures…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="coast-photo"><img src="assets/madeira-coast.jpg" alt="Coastal landscape of Madeira"></div>
+      <div class="contact-copy">
+        <div class="sprig" aria-hidden="true">❧</div>
+        <h2>Let’s stay in touch.</h2>
+        <p>For orders, wholesale enquiries or just to say hello, feel free to get in touch.</p>
+        <a class="email-link" href="mailto:alittletreasurefrommadeira@gmail.com">✉&nbsp; alittletreasurefrommadeira@gmail.com</a>
+        <div class="social-handle">Instagram&nbsp; · &nbsp;@alittletreasurefrommadeira</div>
+        <div class="signature">A Little Treasure from Madeira ♡</div>
+      </div>
+      <div class="contact-note">Nature creates the most beautiful art.<span>♡</span></div>
+    </section>
+  </main>
+  <footer class="site-footer">Handmade&nbsp;&nbsp; • &nbsp;&nbsp;Nature Inspired&nbsp;&nbsp; • &nbsp;&nbsp;Madeira</footer>
+</div>
+<script>
+  // Product cards are loaded from products.json. Manage this list visually in Pages CMS.
+  (async function loadProducts() {
+    const grid = document.getElementById('product-grid');
+    if (!grid) return;
+    try {
+      const response = await fetch('/products.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error('Could not load products');
+      const products = await response.json();
+      const visible = products.filter(product => product.available !== false && product.title && product.image);
+      if (!visible.length) { grid.innerHTML = '<p class="products-loading">New little treasures are coming soon.</p>'; return; }
+      grid.innerHTML = visible.map(product => {
+        const title = String(product.title);
+        const description = String(product.description || 'A unique handmade treasure.');
+        const image = String(product.image);
+        const category = String(product.category || 'Handmade jewellery');
+        const price = String(product.price || '').trim();
+        const subject = encodeURIComponent('Enquiry about ' + title);
+        const safe = value => value.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+        return `<article class="product-card"><a href="mailto:alittletreasurefrommadeira@gmail.com?subject=${subject}"><img src="${safe(image)}" alt="${safe(title)}" loading="lazy"><h3>${safe(title)}</h3><p>${safe(description)}</p>${price ? `<div class="product-price">${safe(price)}</div>` : ''}<div class="product-status">${safe(category)} · Ask about this piece</div></a></article>`;
+      }).join('');
+    } catch (error) {
+      grid.innerHTML = '<p class="products-error">The collection is being prepared. Please come back soon.</p>';
+      console.error(error);
+    }
+  })();
+</script>
+<script>
+  const menuButton = document.querySelector('.menu-button');
+  const nav = document.querySelector('.nav-links');
+  menuButton.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('is-open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.textContent = isOpen ? '×' : '☰';
+  });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    nav.classList.remove('is-open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.textContent = '☰';
+  }));
+</script>
+</body>
+</html>

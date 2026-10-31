@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Wildflower Pendant",
+    "description": "A little bouquet of Madeira’s wildflowers, preserved in resin.",
+    "image": "/assets/pendant-floral.jpg",
+    "category": "Pendants",
+    "price": "",
+    "available": true
+  },
+  {
+    "title": "Daisy Treasure",
+    "description": "A delicate daisy captured in a little golden treasure.",
+    "image": "/assets/ring-daisy.jpg",
+    "category": "Rings",
+    "price": "",
+    "available": true
+  },
+  {
+    "title": "Petal Earrings",
+    "description": "Light-catching earrings with tiny pressed flowers.",
+    "image": "/assets/flower-earrings.jpg",
+    "category": "Earrings",
+    "price": "",
+    "available": true
+  },
+  {
+    "title": "Blue Island Bloom",
+    "description": "A blue floral piece inspired by Madeira’s island colours.",
+    "image": "/assets/blue-pendant.jpg",
+    "category": "Pendants",
+    "price": "",
+    "available": true
+  }
+]

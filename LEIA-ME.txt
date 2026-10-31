@@ -1,0 +1,24 @@
+A LITTLE TREASURE FROM MADEIRA — WEBSITE
+
+FICHEIROS PRINCIPAIS
+- index.html: página principal do website.
+- assets/: fotografias do site e das peças.
+- products.json: catálogo de produtos, carregado automaticamente pelo website.
+- .pages.yml: configuração da área visual de gestão Pages CMS.
+
+ADICIONAR E EDITAR JOIAS SEM CÓDIGO
+1. Depois de enviares estes ficheiros para o GitHub, abre https://app.pagescms.org e entra com a tua conta GitHub.
+2. Autoriza o Pages CMS a aceder ao repositório alittletreasure-website.
+3. Abre a secção “Jewellery collection”.
+4. Aí podes adicionar uma peça, escolher/enviar a fotografia, escrever o nome e descrição, escolher a categoria e indicar o preço se quiseres.
+5. Guarda. O Pages CMS grava as alterações no GitHub; se o alojamento estiver ligado ao repositório, o website atualiza automaticamente após a publicação.
+
+Para esconder uma peça sem a apagar, desmarca “Show in the collection”.
+Para acrescentar fotografias, usa o campo “Product photograph”; serão guardadas na pasta assets.
+
+IMPORTANTE
+O painel visual só fica disponível depois de o ficheiro .pages.yml e os restantes ficheiros serem enviados para o repositório GitHub. É necessário autorizar o Pages CMS com a tua conta GitHub. O alojamento/publicação automática (por exemplo Cloudflare Pages ligado ao GitHub) é uma configuração separada.
+
+CONTACTOS
+Instagram preparado: @alittletreasurefrommadeira (link por ativar quando a conta existir).
+Email: alittletreasurefrommadeira@gmail.com
